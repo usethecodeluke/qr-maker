@@ -1,0 +1,6 @@
+appdirs==1.4.0
+bottle==0.12.13
+packaging==16.8
+pyparsing==2.1.10
+pyqrcode==1.2.1
+six==1.10.0
