@@ -1,18 +1,14 @@
-# A super-simple "hello world" server that exposes port 8080
+# A super-simple qr-code server that exposes port 8080
 #
-FROM python
+FROM jfloff/alpine-python:latest-slim
 MAINTAINER Justin Wood <Justin.Wood@rackspace.com>
 
-# create user
-RUN groupadd web
-RUN useradd -d /home/bottle -m bottle
-
 # install pip and hello-world server requirements
-ADD main.py /home/bottle/main.py
-ADD requirements.txt /home/bottle/requirements.txt
-RUN pip install -r /home/bottle/requirements.txt
+RUN mkdir /app
+ADD main.py /app/main.py
+ADD requirements.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
 
 # in case you'd prefer to use links, expose the port
 EXPOSE 8080
-ENTRYPOINT ["python", "/home/bottle/main.py"]
-USER bottle
+ENTRYPOINT ["python", "/app/main.py"]
