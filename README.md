@@ -1,6 +1,4 @@
-README.md
-
-QR_MAKER
+# qr-maker
 
 This simple project contains a barebones python bottle web app built with a Dockerfile.
 
