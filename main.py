@@ -5,7 +5,7 @@ from bottle import get, run, template, request
 
 @get('/')
 def index():
-    value = 'https://mystuff.rackspace.com/personal/just0707/Documents/Shared%20with%20Everyone/procfs_presentation.pptx?Web=1'
+    value = 'https://www.github.com/usethecodeluke'
     if 'value' in request.GET.keys():
         value = request.GET['value']
     code = qr.create(value)
